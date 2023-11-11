@@ -1,239 +1,115 @@
-package thebetweenlands.client.render.model.entity;
+// Made with Blockbench 4.8.3
+// Exported for Minecraft version 1.17 or later with Mojang mappings
+// Paste this class into your mod and generate all required imports
 
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-@SideOnly(Side.CLIENT)
-public class ModelSiltCrab extends ModelBase {
-	ModelRenderer body_base;
-	ModelRenderer legleft_f1;
-	ModelRenderer legleft_m1;
-	ModelRenderer legleft_b1;
-	ModelRenderer legright_f1;
-	ModelRenderer legright_m1;
-	ModelRenderer legright_b1;
-	ModelRenderer armleft1;
-	ModelRenderer armright1;
-	ModelRenderer panser1;
-	ModelRenderer bodyback;
-	ModelRenderer panser2;
-	ModelRenderer panser3;
-	ModelRenderer legleft_f2;
-	ModelRenderer legleft_m2;
-	ModelRenderer legleft_b2;
-	ModelRenderer legright_f2;
-	ModelRenderer legright_m2;
-	ModelRenderer legright_b2;
-	ModelRenderer clawbase1;
-	ModelRenderer clawtop1;
-	ModelRenderer snapper1;
-	ModelRenderer clawpoint1;
-	ModelRenderer clawbase2;
-	ModelRenderer clawtop2;
-	ModelRenderer snapper2;
-	ModelRenderer clawpoint2;
+public class verybadmodel - Converted<T extends Entity> extends EntityModel<T> {
+	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "verybadmodel_- converted"), "main");
+	private final ModelPart body_base;
+	private final ModelPart legleft_f1;
+	private final ModelPart legleft_m1;
+	private final ModelPart legleft_b1;
+	private final ModelPart legright_f1;
+	private final ModelPart legright_m1;
+	private final ModelPart legright_b1;
+	private final ModelPart armleft1;
+	private final ModelPart armright1;
 
-	public ModelSiltCrab() {
-		textureWidth = 64;
-		textureHeight = 32;
-		legleft_b1 = new ModelRenderer(this, 45, 0);
-		legleft_b1.setRotationPoint(2.0F, 21.0F, 2.0F);
-		legleft_b1.addBox(-0.5F, -0.5F, -0.5F, 3, 1, 1, 0.0F);
-		setRotation(legleft_b1, 0.36425021489121656F, -0.40980330836826856F, -0.136659280431156F);
-		panser2 = new ModelRenderer(this, 0, 13);
-		panser2.setRotationPoint(0.0F, 0.0F, 0.0F);
-		panser2.addBox(-3.5F, -2.0F, -2.0F, 7, 2, 2, 0.0F);
-		setRotation(panser2, -0.18203784098300857F, 0.0F, 0.0F);
-		clawbase2 = new ModelRenderer(this, 41, 22);
-		clawbase2.setRotationPoint(0.0F, 3.0F, 0.0F);
-		clawbase2.addBox(-1.0F, -0.5F, -1.0F, 2, 1, 2, 0.0F);
-		setRotation(clawbase2, -0.31869712141416456F, 0.0F, -0.40980330836826856F);
-		clawpoint1 = new ModelRenderer(this, 29, 22);
-		clawpoint1.setRotationPoint(0.0F, 3.0F, 0.0F);
-		clawpoint1.addBox(-1.0F, 0.0F, -1.0F, 1, 1, 2, 0.0F);
-		setRotation(clawpoint1, 0.0F, 0.0F, 0.27314402793711257F);
-		snapper1 = new ModelRenderer(this, 29, 26);
-		snapper1.setRotationPoint(-1.0F, 0.5F, 0.0F);
-		snapper1.addBox(0.0F, 0.0F, -1.0F, 1, 3, 2, 0.0F);
-		setRotation(snapper1, 0.0F, 0.0F, -0.136659280431156F);
-		clawpoint2 = new ModelRenderer(this, 50, 22);
-		clawpoint2.setRotationPoint(0.0F, 3.0F, 0.0F);
-		clawpoint2.addBox(0.0F, 0.0F, -1.0F, 1, 1, 2, 0.0F);
-		setRotation(clawpoint2, 0.0F, 0.0F, -0.27314402793711257F);
-		legright_f2 = new ModelRenderer(this, 23, 14);
-		legright_f2.setRotationPoint(-3.5F, 0.0F, 0.0F);
-		legright_f2.addBox(-1.0F, -0.5F, -1.0F, 2, 5, 2, 0.0F);
-		setRotation(legright_f2, 0.0F, 0.0F, 0.091106186954104F);
-		legright_m1 = new ModelRenderer(this, 34, 11);
-		legright_m1.setRotationPoint(-2.0F, 21.0F, 1.0F);
-		legright_m1.addBox(-3.5F, -0.5F, -0.5F, 4, 1, 1, 0.0F);
-		setRotation(legright_m1, 0.0F, 0.136659280431156F, 0.18203784098300857F);
-		bodyback = new ModelRenderer(this, 0, 23);
-		bodyback.setRotationPoint(0.0F, 2.0F, 3.0F);
-		bodyback.addBox(-2.5F, -2.0F, 0.0F, 5, 2, 2, 0.0F);
-		legright_b1 = new ModelRenderer(this, 45, 11);
-		legright_b1.setRotationPoint(-2.0F, 21.0F, 2.0F);
-		legright_b1.addBox(-2.5F, -0.5F, -0.5F, 3, 1, 1, 0.0F);
-		setRotation(legright_b1, 0.36425021489121656F, 0.40980330836826856F, 0.136659280431156F);
-		legleft_b2 = new ModelRenderer(this, 45, 3);
-		legleft_b2.setRotationPoint(2.5F, 0.0F, 0.0F);
-		legleft_b2.addBox(-0.5F, 0.0F, -0.5F, 1, 4, 1, 0.0F);
-		setRotation(legleft_b2, 0.0F, 0.0F, -0.31869712141416456F);
-		clawtop1 = new ModelRenderer(this, 20, 26);
-		clawtop1.setRotationPoint(1.0F, 0.5F, 0.0F);
-		clawtop1.addBox(-1.0F, 0.0F, -1.5F, 1, 3, 3, 0.0F);
-		setRotation(clawtop1, 0.0F, 0.0F, 0.045553093477052F);
-		legleft_f2 = new ModelRenderer(this, 23, 3);
-		legleft_f2.setRotationPoint(3.5F, 0.0F, 0.0F);
-		legleft_f2.addBox(-1.0F, -0.5F, -1.0F, 2, 5, 2, 0.0F);
-		setRotation(legleft_f2, 0.0F, 0.0F, -0.091106186954104F);
-		legright_m2 = new ModelRenderer(this, 34, 14);
-		legright_m2.setRotationPoint(-3.5F, 0.0F, 0.0F);
-		legright_m2.addBox(-0.5F, 0.0F, -0.5F, 1, 4, 1, 0.0F);
-		setRotation(legright_m2, 0.0F, 0.0F, 0.31869712141416456F);
-		legright_b2 = new ModelRenderer(this, 45, 14);
-		legright_b2.setRotationPoint(-2.5F, 0.0F, 0.0F);
-		legright_b2.addBox(-0.5F, 0.0F, -0.5F, 1, 4, 1, 0.0F);
-		setRotation(legright_b2, 0.0F, 0.0F, 0.31869712141416456F);
-		clawtop2 = new ModelRenderer(this, 41, 26);
-		clawtop2.setRotationPoint(-1.0F, 0.5F, 0.0F);
-		clawtop2.addBox(0.0F, 0.0F, -1.5F, 1, 3, 3, 0.0F);
-		setRotation(clawtop2, 0.0F, 0.0F, -0.045553093477052F);
-		armleft1 = new ModelRenderer(this, 15, 22);
-		armleft1.setRotationPoint(2.0F, 20.7F, -0.5F);
-		armleft1.addBox(-0.5F, -0.2F, -0.5F, 1, 3, 1, 0.0F);
-		setRotation(armleft1, -1.5025539530419183F, -0.4553564018453205F, -0.4553564018453205F);
-		legleft_f1 = new ModelRenderer(this, 23, 0);
-		legleft_f1.setRotationPoint(2.0F, 21.0F, 0.0F);
-		legleft_f1.addBox(-0.5F, -0.5F, -0.5F, 4, 1, 1, 0.0F);
-		setRotation(legleft_f1, -0.36425021489121656F, 0.18203784098300857F, -0.31869712141416456F);
-		armright1 = new ModelRenderer(this, 36, 22);
-		armright1.setRotationPoint(-2.0F, 20.7F, -0.5F);
-		armright1.addBox(-0.5F, -0.2F, -0.5F, 1, 3, 1, 0.0F);
-		setRotation(armright1, -1.5025539530419183F, 0.4553564018453205F, 0.4553564018453205F);
-		panser1 = new ModelRenderer(this, 0, 6);
-		panser1.setRotationPoint(0.0F, 0.5F, 1.0F);
-		panser1.addBox(-3.5F, -2.0F, 0.0F, 7, 2, 4, 0.0F);
-		setRotation(panser1, -0.136659280431156F, 0.0F, 0.0F);
-		legleft_m2 = new ModelRenderer(this, 34, 3);
-		legleft_m2.setRotationPoint(3.5F, 0.0F, 0.0F);
-		legleft_m2.addBox(-0.5F, 0.0F, -0.5F, 1, 4, 1, 0.0F);
-		setRotation(legleft_m2, 0.0F, 0.0F, -0.31869712141416456F);
-		clawbase1 = new ModelRenderer(this, 20, 22);
-		clawbase1.setRotationPoint(0.0F, 3.0F, 0.0F);
-		clawbase1.addBox(-1.0F, -0.5F, -1.0F, 2, 1, 2, 0.0F);
-		setRotation(clawbase1, -0.31869712141416456F, 0.0F, 0.40980330836826856F);
-		panser3 = new ModelRenderer(this, 0, 18);
-		panser3.setRotationPoint(0.0F, -2.0F, 4.0F);
-		panser3.addBox(-2.5F, 0.0F, 0.0F, 5, 3, 1, 0.0F);
-		setRotation(panser3, -0.27314402793711257F, 0.0F, 0.0F);
-		legleft_m1 = new ModelRenderer(this, 34, 0);
-		legleft_m1.setRotationPoint(2.0F, 21.0F, 1.0F);
-		legleft_m1.addBox(-0.5F, -0.5F, -0.5F, 4, 1, 1, 0.0F);
-		setRotation(legleft_m1, 0.0F, -0.136659280431156F, -0.18203784098300857F);
-		snapper2 = new ModelRenderer(this, 50, 26);
-		snapper2.setRotationPoint(1.0F, 0.5F, 0.0F);
-		snapper2.addBox(-1.0F, 0.0F, -1.0F, 1, 3, 2, 0.0F);
-		setRotation(snapper2, 0.0F, 0.0F, 0.136659280431156F);
-		legright_f1 = new ModelRenderer(this, 23, 11);
-		legright_f1.setRotationPoint(-2.0F, 21.0F, 0.0F);
-		legright_f1.addBox(-3.5F, -0.5F, -0.5F, 4, 1, 1, 0.0F);
-		setRotation(legright_f1, -0.36425021489121656F, -0.18203784098300857F, 0.31869712141416456F);
-		body_base = new ModelRenderer(this, 0, 0);
-		body_base.setRotationPoint(0.0F, 18.5F, -1.0F);
-		body_base.addBox(-3.0F, 0.0F, 0.0F, 6, 2, 3, 0.0F);
-		setRotation(body_base, -0.22759093446006054F, 0.0F, 0.0F);
-		panser1.addChild(panser2);
-		armright1.addChild(clawbase2);
-		clawtop1.addChild(clawpoint1);
-		clawbase1.addChild(snapper1);
-		clawtop2.addChild(clawpoint2);
-		legright_f1.addChild(legright_f2);
-		body_base.addChild(bodyback);
-		legleft_b1.addChild(legleft_b2);
-		clawbase1.addChild(clawtop1);
-		legleft_f1.addChild(legleft_f2);
-		legright_m1.addChild(legright_m2);
-		legright_b1.addChild(legright_b2);
-		clawbase2.addChild(clawtop2);
-		body_base.addChild(panser1);
-		legleft_m1.addChild(legleft_m2);
-		armleft1.addChild(clawbase1);
-		panser1.addChild(panser3);
-		clawbase2.addChild(snapper2);
+	public verybadmodel - Converted(ModelPart root) {
+		this.body_base = root.getChild("body_base");
+		this.legleft_f1 = root.getChild("legleft_f1");
+		this.legleft_m1 = root.getChild("legleft_m1");
+		this.legleft_b1 = root.getChild("legleft_b1");
+		this.legright_f1 = root.getChild("legright_f1");
+		this.legright_m1 = root.getChild("legright_m1");
+		this.legright_b1 = root.getChild("legright_b1");
+		this.armleft1 = root.getChild("armleft1");
+		this.armright1 = root.getChild("armright1");
+	}
+
+	public static LayerDefinition createBodyLayer() {
+		MeshDefinition meshdefinition = new MeshDefinition();
+		PartDefinition partdefinition = meshdefinition.getRoot();
+
+		PartDefinition body_base = partdefinition.addOrReplaceChild("body_base", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, 0.0F, 0.0F, 6.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 18.5F, -1.0F, -0.2276F, 0.0F, 0.0F));
+
+		PartDefinition bodyback = body_base.addOrReplaceChild("bodyback", CubeListBuilder.create().texOffs(0, 23).addBox(-2.5F, -2.0F, 0.0F, 5.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 2.0F, 3.0F));
+
+		PartDefinition panser1 = body_base.addOrReplaceChild("panser1", CubeListBuilder.create().texOffs(0, 6).addBox(-3.5F, -2.0F, 0.0F, 7.0F, 2.0F, 4.0F, new CubeDeformation(0.0F))
+		.texOffs(52, 0).addBox(-1.0F, -4.0F, 2.0F, 3.0F, 2.0F, 3.0F, new CubeDeformation(0.0F))
+		.texOffs(52, 0).mirror().addBox(-4.0F, -3.0F, 0.0F, 3.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)).mirror(false)
+		.texOffs(0, 28).mirror().addBox(-2.5502F, -4.4156F, 2.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false)
+		.texOffs(52, 0).mirror().addBox(-3.0F, -6.0F, -1.0F, 3.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)).mirror(false)
+		.texOffs(0, 28).addBox(1.0F, -4.0F, 3.8F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F))
+		.texOffs(12, 28).mirror().addBox(-2.0F, -4.0F, 5.5F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(0.0F, 0.5F, 1.0F, -0.1367F, 0.0F, 0.0F));
+
+		PartDefinition panser2 = panser1.addOrReplaceChild("panser2", CubeListBuilder.create().texOffs(0, 13).addBox(-3.5F, -2.0F, -2.0F, 7.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -18.5F, 1.0F, -0.182F, 0.0F, 0.0F));
+
+		PartDefinition panser3 = panser1.addOrReplaceChild("panser3", CubeListBuilder.create().texOffs(0, 18).addBox(-2.5F, 0.0F, 0.0F, 5.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -2.0F, 4.0F, -0.2731F, 0.0F, 0.0F));
+
+		PartDefinition legleft_f1 = partdefinition.addOrReplaceChild("legleft_f1", CubeListBuilder.create().texOffs(23, 0).addBox(-0.5F, -0.5F, -0.5F, 4.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, 21.0F, 0.0F, -0.3643F, 0.182F, -0.3187F));
+
+		PartDefinition legleft_f2 = legleft_f1.addOrReplaceChild("legleft_f2", CubeListBuilder.create().texOffs(23, 3).addBox(-1.0F, -0.5F, -1.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.5F, 0.0F, 0.0F, 0.0F, 0.0F, -0.0911F));
+
+		PartDefinition legleft_m1 = partdefinition.addOrReplaceChild("legleft_m1", CubeListBuilder.create().texOffs(34, 0).addBox(-0.5F, -0.5F, -0.5F, 4.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, 21.0F, 1.0F, 0.0F, -0.1367F, -0.182F));
+
+		PartDefinition legleft_m2 = legleft_m1.addOrReplaceChild("legleft_m2", CubeListBuilder.create().texOffs(34, 3).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.5F, 0.0F, 0.0F, 0.0F, 0.0F, -0.3187F));
+
+		PartDefinition legleft_b1 = partdefinition.addOrReplaceChild("legleft_b1", CubeListBuilder.create().texOffs(45, 0).addBox(-0.5F, -0.5F, -0.5F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, 21.0F, 2.0F, 0.3643F, -0.4098F, -0.1367F));
+
+		PartDefinition legleft_b2 = legleft_b1.addOrReplaceChild("legleft_b2", CubeListBuilder.create().texOffs(45, 3).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.5F, 0.0F, 0.0F, 0.0F, 0.0F, -0.3187F));
+
+		PartDefinition legright_f1 = partdefinition.addOrReplaceChild("legright_f1", CubeListBuilder.create().texOffs(23, 11).addBox(-3.5F, -0.5F, -0.5F, 4.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0F, 21.0F, 0.0F, -0.3643F, -0.182F, 0.3187F));
+
+		PartDefinition legright_f2 = legright_f1.addOrReplaceChild("legright_f2", CubeListBuilder.create().texOffs(23, 14).addBox(-1.0F, -0.5F, -1.0F, 2.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0911F));
+
+		PartDefinition legright_m1 = partdefinition.addOrReplaceChild("legright_m1", CubeListBuilder.create().texOffs(34, 11).addBox(-3.5F, -0.5F, -0.5F, 4.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0F, 21.0F, 1.0F, 0.0F, 0.1367F, 0.182F));
+
+		PartDefinition legright_m2 = legright_m1.addOrReplaceChild("legright_m2", CubeListBuilder.create().texOffs(34, 14).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.3187F));
+
+		PartDefinition legright_b1 = partdefinition.addOrReplaceChild("legright_b1", CubeListBuilder.create().texOffs(45, 11).addBox(-2.5F, -0.5F, -0.5F, 3.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0F, 21.0F, 2.0F, 0.3643F, 0.4098F, 0.1367F));
+
+		PartDefinition legright_b2 = legright_b1.addOrReplaceChild("legright_b2", CubeListBuilder.create().texOffs(45, 14).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.5F, 0.0F, 0.0F, 0.0F, 0.0F, 0.3187F));
+
+		PartDefinition armleft1 = partdefinition.addOrReplaceChild("armleft1", CubeListBuilder.create().texOffs(15, 22).addBox(-0.5F, -0.2F, -0.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, 20.7F, -0.5F, -1.5026F, -0.4554F, -0.4554F));
+
+		PartDefinition clawbase1 = armleft1.addOrReplaceChild("clawbase1", CubeListBuilder.create().texOffs(20, 22).addBox(-1.0F, -0.5F, -1.0F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 3.0F, 0.0F, -0.3187F, 0.0F, 0.4098F));
+
+		PartDefinition snapper1 = clawbase1.addOrReplaceChild("snapper1", CubeListBuilder.create().texOffs(29, 26).addBox(0.0F, 0.0F, -1.0F, 1.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, -20.2F, 0.5F, 0.0F, 0.0F, -0.1367F));
+
+		PartDefinition clawtop1 = clawbase1.addOrReplaceChild("clawtop1", CubeListBuilder.create().texOffs(20, 26).addBox(-1.0F, 0.0F, -1.5F, 1.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, -20.2F, 0.5F, 0.0F, 0.0F, 0.0456F));
+
+		PartDefinition clawpoint1 = clawtop1.addOrReplaceChild("clawpoint1", CubeListBuilder.create().texOffs(29, 22).addBox(-1.0F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.2731F));
+
+		PartDefinition armright1 = partdefinition.addOrReplaceChild("armright1", CubeListBuilder.create().texOffs(36, 22).addBox(-0.5F, -0.2F, -0.5F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.0F, 20.7F, -0.5F, -1.5026F, 0.4554F, 0.4554F));
+
+		PartDefinition clawbase2 = armright1.addOrReplaceChild("clawbase2", CubeListBuilder.create().texOffs(41, 22).addBox(-1.0F, -0.5F, -1.0F, 2.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 3.0F, 0.0F, -0.3187F, 0.0F, -0.4098F));
+
+		PartDefinition clawtop2 = clawbase2.addOrReplaceChild("clawtop2", CubeListBuilder.create().texOffs(41, 26).addBox(0.0F, 0.0F, -1.5F, 1.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 0.5F, 0.0F, 0.0F, 0.0F, -0.0456F));
+
+		PartDefinition clawpoint2 = clawtop2.addOrReplaceChild("clawpoint2", CubeListBuilder.create().texOffs(50, 22).addBox(0.0F, 0.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, -20.7F, 0.5F, 0.0F, 0.0F, -0.2731F));
+
+		PartDefinition snapper2 = clawbase2.addOrReplaceChild("snapper2", CubeListBuilder.create().texOffs(50, 26).addBox(-1.0F, 0.0F, -1.0F, 1.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, 0.5F, 0.0F, 0.0F, 0.0F, 0.1367F));
+
+		return LayerDefinition.create(meshdefinition, 64, 32);
 	}
 
 	@Override
-	public void render(Entity entity, float limbSwing, float limbSwingAngle, float entityTickTime, float rotationYaw, float rotationPitch, float scale) {
-		super.render(entity, limbSwing, limbSwingAngle, entityTickTime, rotationYaw, rotationPitch, scale);
-		setRotationAngles(limbSwing, limbSwingAngle, entityTickTime, rotationYaw, rotationPitch, scale, entity);
-		GlStateManager.pushMatrix();
-		GlStateManager.rotate(90.0F, 0.0F, -1.0F, 0.0F);
-		legleft_b1.render(scale);
-		legright_m1.render(scale);
-		legright_b1.render(scale);
-		armleft1.render(scale);
-		legleft_f1.render(scale);
-		armright1.render(scale);
-		legleft_m1.render(scale);
-		legright_f1.render(scale);
-		body_base.render(scale);
-		GlStateManager.popMatrix();
-	}
+	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
-	public void renderEating(float animationTick, float scale) {
-		setRotationAnglesEating(animationTick);
-		GlStateManager.pushMatrix();
-		GlStateManager.rotate(90.0F, 0.0F, -1.0F, 0.0F);
-		legleft_b1.render(scale);
-		legright_m1.render(scale);
-		legright_b1.render(scale);
-		armleft1.render(scale);
-		legleft_f1.render(scale);
-		armright1.render(scale);
-		legleft_m1.render(scale);
-		legright_f1.render(scale);
-		body_base.render(scale);
-		GlStateManager.popMatrix();
-	}
-
-	private void setRotationAnglesEating(float animationTick) {
-		float flap = MathHelper.sin((animationTick) * 0.15F) * 0.6F;
-		float flap2 = MathHelper.cos((animationTick) * 0.15F) * 0.6F;
-		armright1.rotateAngleZ = flap * 0.5F + 0.4553564018453205F;
-		armleft1.rotateAngleZ = flap2 * 0.5F -0.4553564018453205F;
-		clawtop1.rotateAngleZ = -0.045553093477052F * 5F + flap * 0.5F;
-		clawtop2.rotateAngleZ = 0.045553093477052F * 5F + flap2 * 0.5F;
-		clawbase1.rotateAngleZ = 0.40980330836826856F * 4F + flap * 1.5F;
-		clawbase2.rotateAngleZ = -0.40980330836826856F* 4F + flap2 * 1.5F;
-	}
-
-	private void setRotation(ModelRenderer model, float x, float y, float z) {
-		model.rotateAngleX = x;
-		model.rotateAngleY = y;
-		model.rotateAngleZ = z;
 	}
 
 	@Override
-	public void setRotationAngles(float limbSwing, float limbSwingAngle, float entityTickTime, float rotationYaw, float rotationPitch, float scale, Entity entity) {
-		super.setRotationAngles(limbSwing, limbSwingAngle, entityTickTime, rotationYaw, rotationPitch, scale, entity);
-		float movement = MathHelper.cos(limbSwing * 1.5F + (float) Math.PI) * 1.5F * limbSwingAngle *0.5F;
-		armright1.rotateAngleX = -movement * 0.2F -1.5025539530419183F;
-		armleft1.rotateAngleX = movement * 0.2F -1.5025539530419183F;
-		legright_f1.rotateAngleZ = movement;
-		legright_m1.rotateAngleZ = -movement;
-		legright_b1.rotateAngleZ = movement;
-		legleft_f1.rotateAngleZ = movement;
-		legleft_m1.rotateAngleZ = -movement;
-		legleft_b1.rotateAngleZ = movement;
-		clawtop1.rotateAngleZ = -0.045553093477052F;
-		clawtop2.rotateAngleZ = 0.045553093477052F;
-		clawbase1.rotateAngleZ = 0.40980330836826856F;
-		clawbase2.rotateAngleZ = -0.40980330836826856F;
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+		body_base.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		legleft_f1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		legleft_m1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		legleft_b1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		legright_f1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		legright_m1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		legright_b1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		armleft1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		armright1.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 }
